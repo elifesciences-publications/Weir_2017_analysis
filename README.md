@@ -11,4 +11,14 @@ Two other repositories are critical for complete re-production of the analyses i
 
 __Before trying to re-capitulate segmentation using the scripts in sample_segmentation, be sure to read the readme within that folder.__
 
+The R scripts contained in this repository require the following packages to be installed:
+- readr
+- plyr
+- dplyr
+- ggplot2
+- gridExtra
+- Cairo
+
+See [pyto_segmenter](https://github.com/deniclab/pyto_segmenter) for the list of python dependencies.
+
 _Last updated 5.29.17_
