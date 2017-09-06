@@ -18,7 +18,8 @@ The R scripts contained in this repository require the following packages to be 
 - ggplot2
 - gridExtra
 - Cairo
+- minpack.lm
 
 See [pyto_segmenter](https://github.com/deniclab/pyto_segmenter) for the list of python dependencies.
 
-_Last updated 5.29.17_
+_Last updated 9.5.17_
