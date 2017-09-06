@@ -3,7 +3,7 @@
 This repository contains the following:
 - Sample scripts for segmentation of peroxisomes and mitochondria followed by fluorescence intensity measurement using [pyto_segmenter](https://github.com/deniclab/pyto_segmenter) (see sample_segmentation folder)
 - Post-segmentation and fluorescence intensity measurement data, in csv format, for each quantitative microscopy experiment
-- R scripts for generation of quantitative microscopy figure_1c_s1d
+- R scripts for generation of quantitative microscopy
 
 Two other repositories are critical for complete re-production of the analyses in this paper:
 - pyto_segmenter package (above)

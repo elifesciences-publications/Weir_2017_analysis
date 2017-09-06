@@ -5,6 +5,11 @@
 # is very thoroughly commented for documentation; the rest are more sparse but still
 # describe key details and follow very similar schemes to the first.
 
+require(plyr)
+require(dplyr)
+require(ggplot2)
+require(gridExtra)
+require(reshape2)
 
 #### MODELING FOR THE PAPER FIGURE ####
 # set parameter value options
@@ -25,9 +30,9 @@ output_df <- data.frame(k = c(),
                         stab_se = c())
 for (k in ks){
   # start off with the "steady state" case (representing no b-estradiol 2-state)
-  k10 <- k
-  k12 <- 0.00653 # empirically determined from figure 4 data
-  k20 <- k
+  k10 <- k  # kdecay1
+  k12 <- 0.0163 # empirically determined from figure 4 data, kmat
+  k20 <- k  # kdecay2
   k01 <- k
   input_const <- 1000 
   # data container
@@ -135,9 +140,9 @@ for (k in ks){
                                            npart_se = npart_se,
                                            stab_mean = stab_mean,
                                            stab_se = stab_se))
-  # switch to the case with k10 = 0.045 (representing + b-estradiol 2-state)
-  k10 <- 0.045
-  k12 <- 0.00653
+  # switch to the case with k10 = 0.0575 (representing + b-estradiol 2-state)
+  k10 <- 0.0575
+  k12 <- 0.0163
   k20 <- k
   k01 <- k
   input_const <- 1000
@@ -300,7 +305,7 @@ for (k in ks){
   
   # one-state "+MSP1" case
   # used kdeg for the first linear phase of Pex15 turnover (fit line to timepoints 0, 0.5, 1 hr)
-  k10 <- 0.036
+  k10 <- 0.047
   k01 <- k
   input_const <- 1000
   for_avg <- data.frame(expt = c(),
